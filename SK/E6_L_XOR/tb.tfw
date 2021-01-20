@@ -1,0 +1,74 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2007 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 9.2i
+//  \   \         Application : ISE
+//  /   /         Filename : tb.tfw
+// /___/   /\     Timestamp : Fri Jan 15 18:05:29 2021
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: tb
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module tb;
+    reg A = 1'b0;
+    reg B = 1'b0;
+    wire Y;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for A
+    begin
+        #OFFSET;
+        forever
+        begin
+            A = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) A = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    E6_L_XOR UUT (
+        .A(A),
+        .B(B),
+        .Y(Y));
+
+    initial begin
+        // -------------  Current Time:  85ns
+        #85;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  285ns
+        #200;
+        B = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  485ns
+        #200;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  685ns
+        #200;
+        B = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  885ns
+        #200;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1085ns
+        #200;
+        B = 1'b0;
+        // -------------------------------------
+    end
+
+endmodule
+

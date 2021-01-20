@@ -1,0 +1,79 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2007 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 9.2i
+//  \   \         Application : ISE
+//  /   /         Filename : tb.ant
+// /___/   /\     Timestamp : Fri Jan 15 19:11:56 2021
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: tb
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module tb;
+    reg A = 1'b0;
+    wire Y;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for A
+    begin
+        #OFFSET;
+        forever
+        begin
+            A = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) A = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    E3_NOT UUT (
+        .A(A),
+        .Y(Y));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin    // Annotation process for clock A
+        #0;
+        ANNOTATE_Y;
+        #OFFSET;
+        forever begin
+            #115;
+            ANNOTATE_Y;
+            #85;
+        end
+    end
+
+    initial begin  // Open the annotations file...
+        TX_FILE = $fopen("F:\\Xilinx\\SK\\E3_NOT\\tb.ano");
+        #1200 // Final time:  1200 ns
+        $display("Success! Annotation Simulation Complete.");
+        $fdisplay(TX_FILE, "Total[%d]", TX_ERROR);
+        $fclose(TX_FILE);
+        $finish;
+    end
+
+    initial begin
+    end
+
+    task ANNOTATE_Y;
+        #0 begin
+            $fdisplay(TX_FILE, "Annotate[%d,Y,%b]", $time, Y);
+            $fflush(TX_FILE);
+            TX_ERROR = TX_ERROR + 1;
+        end
+    endtask
+
+endmodule
+

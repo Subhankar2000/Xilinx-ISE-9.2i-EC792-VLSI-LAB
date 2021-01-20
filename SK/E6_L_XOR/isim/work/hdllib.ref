@@ -1,0 +1,5 @@
+EN e6_l_xor NULL F:/Xilinx/SK/E6_L_XOR/E6_L_XOR.vhd sub00/vhpl00 1610714131
+AR tb testbench_arch D:/Xilinx_projects/SK/E6_L_XOR/tb.vhw sub00/vhpl03 1609948150
+MO tb NULL F:/Xilinx/SK/E6_L_XOR/tb.tfw vlg26/tb.bin 1610714130
+MO glbl NULL F:/Xilinx/verilog/src/glbl.v vlg2D/glbl.bin 1610714131
+AR e6_l_xor behavioral F:/Xilinx/SK/E6_L_XOR/E6_L_XOR.vhd sub00/vhpl01 1610714132

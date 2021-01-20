@@ -1,0 +1,105 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2007 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 9.2i
+//  \   \         Application : ISE
+//  /   /         Filename : tb.ant
+// /___/   /\     Timestamp : Fri Jan 15 18:05:29 2021
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: tb
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module tb;
+    reg A = 1'b0;
+    reg B = 1'b0;
+    wire Y;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for A
+    begin
+        #OFFSET;
+        forever
+        begin
+            A = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) A = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    E6_L_XOR UUT (
+        .A(A),
+        .B(B),
+        .Y(Y));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin    // Annotation process for clock A
+        #0;
+        ANNOTATE_Y;
+        #OFFSET;
+        forever begin
+            #115;
+            ANNOTATE_Y;
+            #85;
+        end
+    end
+
+    initial begin  // Open the annotations file...
+        TX_FILE = $fopen("F:\\Xilinx\\SK\\E6_L_XOR\\tb.ano");
+        #1300 // Final time:  1300 ns
+        $display("Success! Annotation Simulation Complete.");
+        $fdisplay(TX_FILE, "Total[%d]", TX_ERROR);
+        $fclose(TX_FILE);
+        $finish;
+    end
+
+    initial begin
+        // -------------  Current Time:  85ns
+        #85;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  285ns
+        #200;
+        B = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  485ns
+        #200;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  685ns
+        #200;
+        B = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  885ns
+        #200;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1085ns
+        #200;
+        B = 1'b0;
+        // -------------------------------------
+    end
+
+    task ANNOTATE_Y;
+        #0 begin
+            $fdisplay(TX_FILE, "Annotate[%d,Y,%b]", $time, Y);
+            $fflush(TX_FILE);
+            TX_ERROR = TX_ERROR + 1;
+        end
+    endtask
+
+endmodule
+

@@ -1,0 +1,19 @@
+V3 13
+FL D:/Xilinx_projects/SK/E7_FADD/E7_FADD.vhd 2021/01/06.23:45:18 J.36
+FL D:/Xilinx_projects/SK/E7_FADD/tb.vhw 2021/01/13.17:13:47 J.36
+EN work/tb -1 FL D:/Xilinx_projects/SK/E7_FADD/tb.vhw PB ieee/std_logic_1164 1147840849 \
+      PB ieee/std_logic_arith 1147840851 PB ieee/STD_LOGIC_UNSIGNED 1147840857 \
+      PB ieee/STD_LOGIC_TEXTIO 1147840859 PB std/textio 1147840824
+AR work/tb/testbench_arch -1 \
+      FL D:/Xilinx_projects/SK/E7_FADD/tb.vhw EN work/tb -1 CP E7_FADD \
+      PB ieee/STD_LOGIC_TEXTIO 1147840859
+FL $XILINX/SK/E7_FADD/E7_FADD.vhd 2021/01/06.23:45:18 J.36
+EN work/E7_FADD 1610713527 FL $XILINX/SK/E7_FADD/E7_FADD.vhd \
+      PB ieee/std_logic_1164 1147840849 PB ieee/std_logic_arith 1147840851 \
+      PB ieee/STD_LOGIC_UNSIGNED 1147840857
+AR work/E7_FADD/Behavioral 1610713528 \
+      FL $XILINX/SK/E7_FADD/E7_FADD.vhd EN work/E7_FADD 1610713527
+FL $XILINX/SK/E7_FADD/tb.tfw 2021/01/15.17:55:25 J.36
+MO work/tb FL $XILINX/SK/E7_FADD/tb.tfw MI E7_FADD
+FL $XILINX/verilog/src/glbl.v 2007/05/19.02:52:56 J.36
+MO work/glbl FL $XILINX/verilog/src/glbl.v

@@ -1,0 +1,19 @@
+V3 13
+FL D:/Xilinx_projects/SK/E5_2_AND/E5_2_AND.vhd 2020/12/22.22:07:49 J.36
+FL D:/Xilinx_projects/SK/E5_2_AND/tb.vhw 2020/12/24.12:15:30 J.36
+EN work/tb -1 FL D:/Xilinx_projects/SK/E5_2_AND/tb.vhw PB ieee/std_logic_1164 1147840849 \
+      PB ieee/std_logic_arith 1147840851 PB ieee/STD_LOGIC_UNSIGNED 1147840857 \
+      PB ieee/STD_LOGIC_TEXTIO 1147840859 PB std/textio 1147840824
+AR work/tb/testbench_arch -1 \
+      FL D:/Xilinx_projects/SK/E5_2_AND/tb.vhw EN work/tb -1 CP E5_2_AND \
+      PB ieee/STD_LOGIC_TEXTIO 1147840859
+FL $XILINX/SK/E5_2_AND/E5_2_AND.vhd 2020/12/22.22:07:49 J.36
+EN work/E5_2_AND 1610713405 FL $XILINX/SK/E5_2_AND/E5_2_AND.vhd \
+      PB ieee/std_logic_1164 1147840849 PB ieee/std_logic_arith 1147840851 \
+      PB ieee/STD_LOGIC_UNSIGNED 1147840857
+AR work/E5_2_AND/Behavioral 1610713406 \
+      FL $XILINX/SK/E5_2_AND/E5_2_AND.vhd EN work/E5_2_AND 1610713405
+FL $XILINX/SK/E5_2_AND/tb.tfw 2021/01/15.17:53:23 J.36
+MO work/tb FL $XILINX/SK/E5_2_AND/tb.tfw MI E5_2_AND
+FL $XILINX/verilog/src/glbl.v 2007/05/19.02:52:56 J.36
+MO work/glbl FL $XILINX/verilog/src/glbl.v

@@ -1,0 +1,3 @@
+vhdl work "E7_FADD.vhd"
+verilog work "tb.tfw"
+verilog work "F:/Xilinx/verilog/src/glbl.v"

@@ -1,0 +1,149 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2007 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 9.2i
+//  \   \         Application : ISE
+//  /   /         Filename : tb.ant
+// /___/   /\     Timestamp : Wed Jan 20 15:56:48 2021
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: tb
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module tb;
+    reg CLK = 1'b0;
+    reg S = 1'b0;
+    reg R = 1'b0;
+    reg Q$inout$reg = 1'b0;
+    wire Q = Q$inout$reg;
+    reg Q_BAR$inout$reg = 1'b0;
+    wire Q_BAR = Q_BAR$inout$reg;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for CLK
+    begin
+        #OFFSET;
+        forever
+        begin
+            CLK = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    E8a_SR UUT (
+        .CLK(CLK),
+        .S(S),
+        .R(R),
+        .Q(Q),
+        .Q_BAR(Q_BAR));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin  // Open the annotations file...
+        TX_FILE = $fopen("F:\\Xilinx\\SK\\E8a_SR\\tb.ano");
+        #2600 // Final time:  2600 ns
+        $display("Success! Annotation Simulation Complete.");
+        $fdisplay(TX_FILE, "Total[%d]", TX_ERROR);
+        $fclose(TX_FILE);
+        $finish;
+    end
+
+    initial begin
+        // -------------  Current Time:  85ns
+        #85;
+        R = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  185ns
+        #100;
+        R = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  485ns
+        #300;
+        S = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  585ns
+        #100;
+        S = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  885ns
+        #300;
+        R = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  985ns
+        #100;
+        R = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  1085ns
+        #100;
+        S = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1185ns
+        #100;
+        S = 1'b0;
+        R = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1285ns
+        #100;
+        S = 1'b1;
+        R = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  1385ns
+        #100;
+        S = 1'b0;
+        R = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1485ns
+        #100;
+        S = 1'b1;
+        R = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  1685ns
+        #200;
+        S = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  1785ns
+        #100;
+        S = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1885ns
+        #100;
+        S = 1'b0;
+        R = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  1985ns
+        #100;
+        S = 1'b1;
+        R = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  2085ns
+        #100;
+        S = 1'b0;
+        R = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  2185ns
+        #100;
+        S = 1'b1;
+        R = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  2285ns
+        #100;
+        S = 1'b0;
+        R = 1'b1;
+        // -------------------------------------
+    end
+
+endmodule
+

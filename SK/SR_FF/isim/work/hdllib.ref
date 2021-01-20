@@ -1,0 +1,5 @@
+AR tb testbench_arch F:/Xilinx/SK/SR_FF/tb.vhw sub00/vhpl03 1611138970
+EN tb NULL F:/Xilinx/SK/SR_FF/tb.vhw sub00/vhpl04 1611138969
+AR sr_ff behavioral F:/Xilinx/SK/SR_FF/SR_FF.vhd sub00/vhpl01 1611138528
+EN sr_ff NULL F:/Xilinx/SK/SR_FF/SR_FF.vhd sub00/vhpl00 1611138527
+MO glbl NULL F:/Xilinx/verilog/src/glbl.v vlg2D/glbl.bin 1611138559

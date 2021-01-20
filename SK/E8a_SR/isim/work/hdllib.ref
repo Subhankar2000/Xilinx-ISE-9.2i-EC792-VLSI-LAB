@@ -1,0 +1,5 @@
+AR e8a_sr behavioral F:/Xilinx/SK/E8a_SR/E8a_SR.vhd sub00/vhpl01 1611138412
+EN e8a_sr NULL F:/Xilinx/SK/E8a_SR/E8a_SR.vhd sub00/vhpl00 1611138411
+MO tb NULL F:/Xilinx/SK/E8a_SR/tb.tfw vlg26/tb.bin 1611138409
+AR tb testbench_arch D:/Xilinx_projects/SK/E8a_SR/tb.vhw sub00/vhpl03 1610717937
+MO glbl NULL F:/Xilinx/verilog/src/glbl.v vlg2D/glbl.bin 1611138410

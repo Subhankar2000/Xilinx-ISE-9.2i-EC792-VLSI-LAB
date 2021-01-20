@@ -1,0 +1,5 @@
+AR e3_not behavioral F:/Xilinx/SK/E3_NOT/E3_NOT.vhd sub00/vhpl01 1610718120
+AR tb testbench_arch D:/Xilinx_projects/A11-LAB/E3_NOT/tb.vhw sub00/vhpl03 1608654782
+MO tb NULL F:/Xilinx/SK/E3_NOT/tb.tfw vlg26/tb.bin 1610718117
+EN e3_not NULL F:/Xilinx/SK/E3_NOT/E3_NOT.vhd sub00/vhpl00 1610718119
+MO glbl NULL F:/Xilinx/verilog/src/glbl.v vlg2D/glbl.bin 1610718117

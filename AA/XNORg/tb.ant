@@ -1,0 +1,83 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2007 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 9.2i
+//  \   \         Application : ISE
+//  /   /         Filename : tb.ant
+// /___/   /\     Timestamp : Fri Jan 15 17:59:46 2021
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: tb
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module tb;
+    reg A = 1'b0;
+    reg B = 1'b0;
+    wire Y;
+
+
+    XNORg UUT (
+        .A(A),
+        .B(B),
+        .Y(Y));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin    // Annotation process
+        #0;
+        ANNOTATE_Y;
+        forever begin
+            #50;
+            ANNOTATE_Y;
+            #50;
+        end
+    end
+
+    initial begin  // Open the annotations file...
+        TX_FILE = $fopen("F:\\Xilinx\\AA\\XNORg\\tb.ano");
+        #1000 // Final time:  1000 ns
+        $display("Success! Annotation Simulation Complete.");
+        $fdisplay(TX_FILE, "Total[%d]", TX_ERROR);
+        $fclose(TX_FILE);
+        $finish;
+    end
+
+    initial begin
+        // -------------  Current Time:  100ns
+        #100;
+        A = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  200ns
+        #100;
+        A = 1'b0;
+        B = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  300ns
+        #100;
+        A = 1'b1;
+        // -------------------------------------
+        // -------------  Current Time:  400ns
+        #100;
+        A = 1'b0;
+        B = 1'b0;
+    end
+
+    task ANNOTATE_Y;
+        #0 begin
+            $fdisplay(TX_FILE, "Annotate[%d,Y,%b]", $time, Y);
+            $fflush(TX_FILE);
+            TX_ERROR = TX_ERROR + 1;
+        end
+    endtask
+
+endmodule
+

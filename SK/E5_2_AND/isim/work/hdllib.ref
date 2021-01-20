@@ -1,0 +1,5 @@
+AR e5_2_and behavioral F:/Xilinx/SK/E5_2_AND/E5_2_AND.vhd sub00/vhpl01 1610713406
+EN e5_2_and NULL F:/Xilinx/SK/E5_2_AND/E5_2_AND.vhd sub00/vhpl00 1610713405
+MO tb NULL F:/Xilinx/SK/E5_2_AND/tb.tfw vlg26/tb.bin 1610713404
+AR tb testbench_arch D:/Xilinx_projects/SK/E5_2_AND/tb.vhw sub00/vhpl03 1608792359
+MO glbl NULL F:/Xilinx/verilog/src/glbl.v vlg2D/glbl.bin 1610713404
