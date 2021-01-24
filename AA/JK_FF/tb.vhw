@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
--- Copyright (c) 1995-2003 Xilinx, Inc.
+-- Copyright (c) 1995-2007 Xilinx, Inc.
 -- All Right Reserved.
 --------------------------------------------------------------------------------
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 8.2i
+-- \   \   \/     Version : 9.2i
 --  \   \         Application : ISE
 --  /   /         Filename : tb.vhw
--- /___/   /\     Timestamp : Wed Jan 20 13:59:36 2021
+-- /___/   /\     Timestamp : Mon Jan 25 00:08:14 2021
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -28,8 +28,6 @@ ENTITY tb IS
 END tb;
 
 ARCHITECTURE testbench_arch OF tb IS
-    FILE RESULTS: TEXT OPEN WRITE_MODE IS "results.txt";
-
     COMPONENT JKFF
         PORT (
             CLK : In std_logic;
@@ -45,9 +43,6 @@ ARCHITECTURE testbench_arch OF tb IS
     SIGNAL K : std_logic := '0';
     SIGNAL Q : std_logic := '0';
     SIGNAL Q_BAR : std_logic := '0';
-
-    SHARED VARIABLE TX_ERROR : INTEGER := 0;
-    SHARED VARIABLE TX_OUT : LINE;
 
     constant PERIOD : time := 200 ns;
     constant DUTY_CYCLE : real := 0.5;
@@ -91,23 +86,19 @@ ARCHITECTURE testbench_arch OF tb IS
                 -- -------------------------------------
                 -- -------------  Current Time:  685ns
                 WAIT FOR 200 ns;
-                J <= '1';
                 K <= '1';
                 -- -------------------------------------
                 -- -------------  Current Time:  885ns
                 WAIT FOR 200 ns;
-                J <= '0';
                 K <= '0';
                 -- -------------------------------------
                 -- -------------  Current Time:  1085ns
                 WAIT FOR 200 ns;
                 J <= '1';
-                K <= '1';
                 -- -------------------------------------
                 -- -------------  Current Time:  1285ns
                 WAIT FOR 200 ns;
                 J <= '0';
-                K <= '0';
                 -- -------------------------------------
                 -- -------------  Current Time:  1485ns
                 WAIT FOR 200 ns;
@@ -115,24 +106,15 @@ ARCHITECTURE testbench_arch OF tb IS
                 -- -------------------------------------
                 -- -------------  Current Time:  1685ns
                 WAIT FOR 200 ns;
-                J <= '1';
+                K <= '0';
                 -- -------------------------------------
-                WAIT FOR 1515 ns;
+                -- -------------  Current Time:  1885ns
+                WAIT FOR 200 ns;
+                J <= '1';
+                K <= '1';
+                -- -------------------------------------
+                WAIT FOR 1315 ns;
 
-                IF (TX_ERROR = 0) THEN
-                    STD.TEXTIO.write(TX_OUT, string'("No errors or warnings"));
-                    STD.TEXTIO.writeline(RESULTS, TX_OUT);
-                    ASSERT (FALSE) REPORT
-                      "Simulation successful (not a failure).  No problems detected."
-                      SEVERITY FAILURE;
-                ELSE
-                    STD.TEXTIO.write(TX_OUT, TX_ERROR);
-                    STD.TEXTIO.write(TX_OUT,
-                        string'(" errors found in simulation"));
-                    STD.TEXTIO.writeline(RESULTS, TX_OUT);
-                    ASSERT (FALSE) REPORT "Errors found during simulation"
-                         SEVERITY FAILURE;
-                END IF;
             END PROCESS;
 
     END testbench_arch;

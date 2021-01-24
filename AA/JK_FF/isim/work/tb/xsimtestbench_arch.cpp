@@ -1,10 +1,14 @@
-#include "isim/work/tb/testbench_arch.h"
 static const char * HSimCopyRightNotice = "Copyright 2004-2005, Xilinx Inc. All rights reserved.";
-#include "D:/Xilinx/vhdl/hdp/nt/ieee/std_logic_1164/std_logic_1164.h"
-#include "D:/Xilinx/vhdl/hdp/nt/ieee/std_logic_arith/std_logic_arith.h"
-#include "D:/Xilinx/vhdl/hdp/nt/std/textio/textio.h"
-#include "D:/Xilinx/vhdl/hdp/nt/ieee/std_logic_unsigned/std_logic_unsigned.h"
-#include "D:/Xilinx/vhdl/hdp/nt/ieee/std_logic_textio/std_logic_textio.h"
+#ifdef __MINGW32__
+#include "xsimMinGW.h"
+#else
+#include "xsim.h"
+#endif
+#include "F:/Xilinx/vhdl/hdp/nt/ieee/std_logic_1164/std_logic_1164.h"
+#include "F:/Xilinx/vhdl/hdp/nt/ieee/std_logic_arith/std_logic_arith.h"
+#include "F:/Xilinx/vhdl/hdp/nt/std/textio/textio.h"
+#include "F:/Xilinx/vhdl/hdp/nt/ieee/std_logic_unsigned/std_logic_unsigned.h"
+#include "F:/Xilinx/vhdl/hdp/nt/ieee/std_logic_textio/std_logic_textio.h"
 
 class _top : public HSim__s6 {
 public:
@@ -12,9 +16,13 @@ public:
     HSimConfigDecl * topModuleInstantiate() {
         HSimConfigDecl * cfgvh = 0;
         cfgvh = new HSimConfigDecl("default");
+        (*cfgvh).registerFuseLibList("");
+
         HSim__s6 * topvh = 0;
-        topvh = new Work_tb_testbench_arch("tb");
+        extern HSim__s6 * createWork_tb_testbench_arch(const char*);
+        topvh = createWork_tb_testbench_arch("tb");
         topvh->constructPorts();
+        topvh->checkTopLevelPortsConstrainted();
         topvh->vhdlArchImplement();
         topvh->architectureInstantiate(cfgvh);
         addChild(topvh);
@@ -27,11 +35,11 @@ main(int argc, char **argv) {
   globalKernel->getOptions(argc,argv);
   HSim__s6 * _top_i = 0;
   try {
-    IeeeStd_logic_1164=new Ieee_std_logic_1164("Std_logic_1164");
-    IeeeStd_logic_arith=new Ieee_std_logic_arith("Std_logic_arith");
-    StdTextio=new Std_textio("Textio");
-    IeeeStd_logic_unsigned=new Ieee_std_logic_unsigned("Std_logic_unsigned");
-    IeeeStd_logic_textio=new Ieee_std_logic_textio("Std_logic_textio");
+    IeeeStd_logic_1164=new Ieee_std_logic_1164("std_logic_1164");
+    IeeeStd_logic_arith=new Ieee_std_logic_arith("std_logic_arith");
+    StdTextio=new Std_textio("TEXTIO");
+    IeeeStd_logic_unsigned=new Ieee_std_logic_unsigned("STD_LOGIC_UNSIGNED");
+    IeeeStd_logic_textio=new Ieee_std_logic_textio("STD_LOGIC_TEXTIO");
     HSimConfigDecl *cfg;
  _top_i = new _top();
   cfg =  _top_i->topModuleInstantiate();

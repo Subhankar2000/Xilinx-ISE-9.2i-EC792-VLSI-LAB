@@ -23,12 +23,9 @@ class Work_tb_testbench_arch: public HSim__s6 {
 public:
 
 
-HSimFileVar Results;
-HSim__s4 VC;
-HSimAccessVar VF;
-HSim__s4 CJ;
-HSim__s4 CN;
-HSim__s4 CR;
+HSim__s4 Cy;
+HSim__s4 CC;
+HSim__s4 CF;
     HSim__s1 SA[5];
     Work_tb_testbench_arch(const char * name);
     ~Work_tb_testbench_arch();
