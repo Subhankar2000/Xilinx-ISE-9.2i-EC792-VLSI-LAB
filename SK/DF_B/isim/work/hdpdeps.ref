@@ -1,0 +1,17 @@
+V3 13
+FL D:/Xilinx_projects/SK/DF_B/DF_B.vhd 2021/01/21.13:59:41 J.36
+FL D:/Xilinx_projects/SK/DF_B/tb.vhw 2021/01/21.14:00:31 J.36
+FL $XILINX/SK/DF_B/DF_B.vhd 2021/01/21.13:59:41 J.36
+EN work/DF_B 1611218354 FL $XILINX/SK/DF_B/DF_B.vhd PB ieee/std_logic_1164 1147840849 \
+      PB ieee/std_logic_arith 1147840851 PB ieee/STD_LOGIC_UNSIGNED 1147840857
+AR work/DF_B/Behavioral 1611218355 \
+      FL $XILINX/SK/DF_B/DF_B.vhd EN work/DF_B 1611218354
+FL $XILINX/SK/DF_B/tb.tfw 2021/01/21.14:09:10 J.36
+FL $XILINX/SK/DF_B/tb.vhw 2021/01/21.14:09:35 J.36
+EN work/tb 1611218377 FL $XILINX/SK/DF_B/tb.vhw PB ieee/std_logic_1164 1147840849 \
+      PB ieee/std_logic_arith 1147840851 PB ieee/STD_LOGIC_UNSIGNED 1147840857 \
+      PB ieee/STD_LOGIC_TEXTIO 1147840859 PB std/textio 1147840824
+AR work/tb/testbench_arch 1611218378 \
+      FL $XILINX/SK/DF_B/tb.vhw EN work/tb 1611218377 CP DF_B
+FL $XILINX/verilog/src/glbl.v 2007/05/19.02:52:56 J.36
+MO work/glbl FL $XILINX/verilog/src/glbl.v

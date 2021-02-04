@@ -1,0 +1,7 @@
+V3 3
+FL $XILINX/SK/dcounter/dcounter.vhd 2021/02/01.21:40:09 J.36
+EN work/dcounter 1612423325 FL $XILINX/SK/dcounter/dcounter.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/dcounter/Behavioral 1612423326 \
+      FL $XILINX/SK/dcounter/dcounter.vhd EN work/dcounter 1612423325

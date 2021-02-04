@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLParsers" num="3607" delta="unknown" >Unit <arg fmt="%s" index="1">work/tb</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/Xilinx_projects/SK/count8/tb.vhw</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">F:/Xilinx/SK/count8/tb.vhw</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="unknown" >Unit <arg fmt="%s" index="1">work/tb/testbench_arch</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">D:/Xilinx_projects/SK/count8/tb.vhw</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">F:/Xilinx/SK/count8/tb.vhw</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3583" delta="unknown" >File &quot;<arg fmt="%s" index="1">F:/Xilinx/vhdl/src/ieee/std_logic_arith.vhd</arg>&quot; which file &quot;<arg fmt="%s" index="2">F:/Xilinx/vhdl/src/ieee/std_logic_unsigned.vhd</arg>&quot; depends on is modified, but has not been compiled.  You may need to compile &quot;<arg fmt="%s" index="3">F:/Xilinx/vhdl/src/ieee/std_logic_arith.vhd</arg>&quot; first.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3583" delta="unknown" >File &quot;<arg fmt="%s" index="1">F:/Xilinx/vhdl/src/ieee/std_logic_unsigned.vhd</arg>&quot; which file &quot;<arg fmt="%s" index="2">F:/Xilinx/SK/count8/count8.vhd</arg>&quot; depends on is modified, but has not been compiled.  You may need to compile &quot;<arg fmt="%s" index="3">F:/Xilinx/vhdl/src/ieee/std_logic_unsigned.vhd</arg>&quot; first.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3583" delta="unknown" >File &quot;<arg fmt="%s" index="1">F:/Xilinx/vhdl/src/ieee/std_logic_arith.vhd</arg>&quot; which file &quot;<arg fmt="%s" index="2">F:/Xilinx/SK/count8/count8.vhd</arg>&quot; depends on is modified, but has not been compiled.  You may need to compile &quot;<arg fmt="%s" index="3">F:/Xilinx/vhdl/src/ieee/std_logic_arith.vhd</arg>&quot; first.
+</msg>
+
+</messages>
+

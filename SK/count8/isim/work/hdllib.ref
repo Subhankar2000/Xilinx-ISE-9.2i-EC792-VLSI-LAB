@@ -1,0 +1,5 @@
+EN tb NULL F:/Xilinx/SK/count8/tb.vhw sub00/vhpl04 1612423549
+AR tb testbench_arch F:/Xilinx/SK/count8/tb.vhw sub00/vhpl03 1612423550
+EN count8 NULL F:/Xilinx/SK/count8/count8.vhd sub00/vhpl00 1612423508
+MO glbl NULL F:/Xilinx/verilog/src/glbl.v vlg2D/glbl.bin 1612423507
+AR count8 behavioral F:/Xilinx/SK/count8/count8.vhd sub00/vhpl01 1612423509

@@ -1,0 +1,24 @@
+V3 15
+FL D:/Xilinx_projects/SK/E8c_JK/E8c_JK.vhd 2021/01/28.14:38:17 J.36
+FL D:/Xilinx_projects/SK/E8c_JK/tb.vhw 2021/02/01.00:42:44 J.36
+FL D:/Xilinx_projects/SK/E8c_JK/tt.vhw 2021/01/28.15:25:59 J.36
+EN work/tt 1611827777 FL D:/Xilinx_projects/SK/E8c_JK/tt.vhw \
+      PB ieee/std_logic_1164 1147840849 PB ieee/std_logic_arith 1147840851 \
+      PB ieee/STD_LOGIC_UNSIGNED 1147840857 PB ieee/STD_LOGIC_TEXTIO 1147840859 \
+      PB std/textio 1147840824
+AR work/tt/testbench_arch 1611827778 \
+      FL D:/Xilinx_projects/SK/E8c_JK/tt.vhw EN work/tt 1611827777 CP E8c_JK
+FL $XILINX/SK/E8c_JK/E8c_JK.vhd 2021/01/28.14:38:17 J.36
+EN work/E8c_JK 1612415848 FL $XILINX/SK/E8c_JK/E8c_JK.vhd PB ieee/std_logic_1164 1147840849 \
+      PB ieee/std_logic_arith 1147840851 PB ieee/STD_LOGIC_UNSIGNED 1147840857
+AR work/E8c_JK/Behavioral 1612415849 \
+      FL $XILINX/SK/E8c_JK/E8c_JK.vhd EN work/E8c_JK 1612415848
+FL $XILINX/SK/E8c_JK/tb.tfw 2021/02/04.10:47:24 J.36
+FL $XILINX/SK/E8c_JK/tb.vhw 2021/02/04.11:29:02 J.36
+EN work/tb 1612418352 FL $XILINX/SK/E8c_JK/tb.vhw PB ieee/std_logic_1164 1147840849 \
+      PB ieee/std_logic_arith 1147840851 PB ieee/STD_LOGIC_UNSIGNED 1147840857 \
+      PB ieee/STD_LOGIC_TEXTIO 1147840859 PB std/textio 1147840824
+AR work/tb/testbench_arch 1612418353 \
+      FL $XILINX/SK/E8c_JK/tb.vhw EN work/tb 1612418352 CP E8c_JK
+FL $XILINX/verilog/src/glbl.v 2007/05/19.02:52:56 J.36
+MO work/glbl FL $XILINX/verilog/src/glbl.v

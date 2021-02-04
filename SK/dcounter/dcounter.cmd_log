@@ -1,0 +1,3 @@
+xst -ise "D:/Xilinx_projects/SK/dcounter/dcounter.ise" -intstyle ise -ifn dcounter.xst -ofn dcounter.syr
+xst -ise "D:/Xilinx_projects/SK/dcounter/dcounter.ise" -intstyle ise -ifn dcounter.xst -ofn dcounter.syr
+xst -ise "F:/Xilinx/SK/dcounter/dcounter.ise" -intstyle ise -ifn dcounter.xst -ofn dcounter.syr

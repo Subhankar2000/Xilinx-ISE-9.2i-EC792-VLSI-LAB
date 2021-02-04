@@ -1,0 +1,1 @@
+xst -ise "F:/Xilinx/SK/ucounter/ucounter.ise" -intstyle ise -ifn ucounter.xst -ofn ucounter.syr
