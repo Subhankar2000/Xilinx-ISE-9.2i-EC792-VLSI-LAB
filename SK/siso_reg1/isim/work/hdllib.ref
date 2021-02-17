@@ -1,0 +1,4 @@
+EN siso_reg1 NULL F:/Xilinx/SK/siso_reg1/siso_reg1.vhd sub00/vhpl00 1613585883
+AR siso_reg1 behavioral F:/Xilinx/SK/siso_reg1/siso_reg1.vhd sub00/vhpl01 1613585884
+EN tb NULL F:/Xilinx/SK/siso_reg1/tb.vhw sub00/vhpl02 1613586144
+AR tb testbench_arch F:/Xilinx/SK/siso_reg1/tb.vhw sub00/vhpl03 1613586145

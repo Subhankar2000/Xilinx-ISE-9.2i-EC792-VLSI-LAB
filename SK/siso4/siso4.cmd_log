@@ -1,0 +1,2 @@
+xst -ise "D:/Xilinx_projects/SK/siso4/siso4.ise" -intstyle ise -ifn siso4.xst -ofn siso4.syr
+xst -ise "F:/Xilinx/SK/siso4/siso4.ise" -intstyle ise -ifn siso4.xst -ofn siso4.syr

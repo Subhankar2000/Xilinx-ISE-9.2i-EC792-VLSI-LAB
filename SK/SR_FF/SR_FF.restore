@@ -763,13 +763,16 @@ proc restore { { project_dir "" } } {
     RestoreProjectSettings $iProjHelper $project_settings 
   } "A problem occured while restoring project settings."
 
-  set user_files {}
+  set user_files { 
+      "SR_FF.vhd" 
+      "tb.tbw"}
 
   HandleException {
     AddUserFiles $iProjHelper $user_files
   } "A problem occured while restoring user files."
 
-  set imported_files {}
+  set imported_files { 
+      "tb.xwv"}
 
   set origination 2
 

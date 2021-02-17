@@ -2,15 +2,15 @@
    ./tb_isim_beh.exe
      -intstyle  ise
      -ipchost  localhost
-     -ipcport  52841
+     -ipcport  51943
 
-Wed Jan 20 16:28:16 2021
+Thu Jan 21 13:16:41 2021
 
 Total Line Count : 73
 
- Elaboration time : 0.03125 sec.
+ Elaboration time : 0 sec.
 
- Estimate current memory usage : 199.422 Meg. 
+ Estimate current memory usage : 199.582 Meg. 
 
  Total Signals          : 12
  Total Nets             : 7
@@ -30,9 +30,9 @@ isimrun 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 
- Simulation time 0.109375 sec.
+ Simulation time 0.078125 sec.
 
- Estimate current memory usage : 209.252 Meg. 
+ Estimate current memory usage : 216.49 Meg. 
 
-Wed Jan 20 16:55:12 2021
+Thu Jan 21 13:16:46 2021
 

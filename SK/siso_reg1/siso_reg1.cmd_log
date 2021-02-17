@@ -1,0 +1,1 @@
+xst -ise "F:/Xilinx/SK/siso_reg1/siso_reg1.ise" -intstyle ise -ifn siso_reg1.xst -ofn siso_reg1.syr
